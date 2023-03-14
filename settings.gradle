@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidCarModule"
 include ':app'
+include ':usb_module'

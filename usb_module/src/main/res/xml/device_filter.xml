@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--声明可以处理所有usb设备-->
+    <usb-device />
+    <!--以下声明处理指定vid和pid的usb设备 vendor-id 供应商id 唯一 想USB-if申请 pid:产品id，由厂商自行决定 -->
+    <!--
+    <usb-devices vendor-id="1234" product-id="5678"/>
+    -->
+</resources>
