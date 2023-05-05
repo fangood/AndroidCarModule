@@ -5,23 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:id="@+id/nameTextView"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
         android:id="@+id/vendorIdTextView"
         android:padding="5dp"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/productIdTextView"
         android:padding="5dp"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/nameTextView"
+        android:id="@+id/manufactureTextView"
         android:padding="5dp"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:padding="5dp"
+        android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

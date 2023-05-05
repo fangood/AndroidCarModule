@@ -33,7 +33,9 @@ public class UsbListAdapter extends RecyclerView.Adapter<UsbListAdapter.MyViewHo
         if (usbDevice != null){
             holder.vendorIdTextView.setText(String.format("verdorId: %d", usbDevice.getVendorId()));
             holder.productIdTextView.setText(String.format("productId: %d", usbDevice.getProductId()));
-            holder.nameTextView.setText(String.format("deviceName: %s", usbDevice.getProductName()));
+            holder.nameTextView.setText(String.format("deviceName: %s", usbDevice.getDeviceName()));
+            holder.manufactureTextView.setText(String.format("制造商: %s", usbDevice.getManufacturerName()));
+            holder.productNameTextView.setText(String.format("产品名: %s", usbDevice.getProductName()));
         }
 
     }
@@ -43,16 +45,37 @@ public class UsbListAdapter extends RecyclerView.Adapter<UsbListAdapter.MyViewHo
         return mList.size();
     }
 
-    static class MyViewHolder extends RecyclerView.ViewHolder {
+    static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
          TextView vendorIdTextView;
          TextView productIdTextView;
          TextView nameTextView;
+         TextView manufactureTextView;
+         TextView productNameTextView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             vendorIdTextView = itemView.findViewById(R.id.vendorIdTextView);
             productIdTextView = itemView.findViewById(R.id.productIdTextView);
             nameTextView = itemView.findViewById(R.id.nameTextView);
+            manufactureTextView = itemView.findViewById(R.id.manufactureTextView);
+            productNameTextView = itemView.findViewById(R.id.productNameTextView);
         }
+
+        @Override
+        public void onClick(View v) {
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(v, getAdapterPosition());
+            }
+        }
+    }
+    private static OnItemClickListener mOnItemClickListener;
+
+    // 6.设置点击事件对象
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mOnItemClickListener = listener;
+    }
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
     }
 }

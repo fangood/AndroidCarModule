@@ -20,6 +20,7 @@
 
             </meta-data>
         </activity>
+        <activity android:name=".UsbDetailActivity"/>
     </application>
 
 </manifest>
